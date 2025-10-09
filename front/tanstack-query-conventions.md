@@ -1,5 +1,9 @@
 # Conventions for using TanStack Query in Skill.College project
 
+## Custom Hook
+
+We will always create a custom hook when we want to fetch data using `useQuery` or any other hook from TanStack query. Directly fetching data inside a component is not recommended.
+
 ## Naming Related
 
 ### 1. Always name the data variable appropriately
