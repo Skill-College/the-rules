@@ -1,5 +1,9 @@
 # Conventions for using TanStack Query in Skill.College project
 
+## Custom Hook
+
+We will always create a custom hook when we want to fetch data using `useQuery` or any other hook from TanStack query. Directly fetching data inside a component is not recommended.
+
 ## Naming Related
 
 ### 1. Always name the data variable appropriately
@@ -83,3 +87,7 @@ export function useEmployees() {
 ```
 
 Then when we want to invalidate the query of perform other actions to the query we use the exported constant. And we can get other values of query key from global state like search parameters or state inside context (if any).
+
+## Handling loading and error states
+
+Always handle `isPending` and `isError` states which are returned from TanStack Query hooks. If the same custom hook for data fetching, is rendered multiple times at once (i.e. it is used multiple times in the same page), then at least one of them should handle the loading and error states, if all of them doesn't handle those states.
